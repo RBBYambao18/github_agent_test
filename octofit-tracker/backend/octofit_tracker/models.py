@@ -2,12 +2,14 @@
 from djongo import models
 
 class Team(models.Model):
+    id = models.ObjectIdField(primary_key=True)
     name = models.CharField(max_length=50, unique=True)
     description = models.TextField()
     def __str__(self):
         return self.name
 
 class User(models.Model):
+    id = models.ObjectIdField(primary_key=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     team = models.CharField(max_length=50)
